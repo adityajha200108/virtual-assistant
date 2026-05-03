@@ -1,0 +1,1 @@
+{"version":3,"file":"injectDependencies.js","sourceRoot":"","sources":["../../src/utils/injectDependencies.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU,UAAU,CAAC,UAAe,EAAE,OAAY,EAAE,KAAU;IAChE,MAAM,aAAa,GAAG,IAAI,KAAK,EAAE,CAAC;IAClC,MAAM,eAAe,GAAG,IAAI,OAAO,CAAC,aAAa,CAAC,CAAC;IACnD,OAAO,IAAI,UAAU,CAAC,eAAe,EAAE,aAAa,CAAC,CAAC;AAC1D,CAAC"}
