@@ -31,27 +31,45 @@ Virtual Assistant is not just a chatbot; it's a voice-first interface designed t
 
 ```text
 virtual-assistant/
-├── backend/                # Express.js Server
-│   ├── config/             # DB & Cloudinary configurations
-│   ├── controllers/        # Business logic (Auth, AI Processing)
-│   ├── middlewares/        # Auth & File upload middlewares
-│   ├── models/             # Mongoose User schemas
-│   ├── routes/             # API endpoint definitions
-│   ├── public/             # Temporary local storage for uploads
-│   ├── .env                # Environment variables (Internal)
-│   ├── gemini.js           # Groq AI implementation logic
-│   └── index.js            # Entry point
-├── frontend/               # Vite + React Client
-│   ├── public/             # Static assets
+├── backend/                    # Express.js Server Logic
+│   ├── config/                 # ⚙️ Configurations
+│   │   ├── cloudinary.js       # Cloudinary setup & upload logic
+│   │   ├── db.js               # MongoDB connection (Mongoose)
+│   │   └── token.js            # JWT generation utility
+│   ├── controllers/            # 🎮 Logic Handlers
+│   │   ├── auth.controllers.js # Login, Signup, Logout logic
+│   │   └── user.controllers.js # Profile, AI interaction logic
+│   ├── middlewares/            # 🛡️ Protections
+│   │   ├── isAuth.js           # JWT verification middleware
+│   │   └── multer.js           # File upload configuration
+│   ├── models/                 # 🗄️ Database Schemas
+│   │   └── user.model.js       # User & History schema
+│   ├── routes/                 # 🛣️ API Endpoints
+│   │   ├── auth.routes.js      # Auth route mapping
+│   │   └── user.routes.js      # User route mapping
+│   ├── public/                 # 🖼️ Local Upload Buffer
+│   ├── gemini.js               # 🧠 Groq AI Core (Llama 3.3)
+│   ├── index.js                # 🚀 Server Entry Point
+│   └── .env                    # Environment Secrets
+├── frontend/                   # Vite + React Client
+│   ├── public/                 # Static Public Assets
 │   ├── src/
-│   │   ├── assets/         # Animations & Images (GIFs)
-│   │   ├── components/     # Reusable UI components
-│   │   ├── context/        # UserData Global State
-│   │   ├── pages/          # Application views (Home, Auth, Customization)
-│   │   ├── App.jsx         # Main routing
-│   │   └── main.jsx        # App entry point
-│   └── vite.config.js      # Vite configuration
-└── README.md               # Project documentation
+│   │   ├── assets/             # 🎞️ GIFs, PNGs, and Backgrounds
+│   │   ├── components/         # 🧩 Reusable UI Parts
+│   │   │   └── Card.jsx        # Image selection card
+│   │   ├── context/            # 💡 State Management
+│   │   │   └── UserContext.jsx # Global User & API state
+│   │   ├── pages/              # 📄 Full View Components
+│   │   │   ├── Home.jsx        # Main Assistant & Chat view
+│   │   │   ├── SignIn.jsx      # Authentication (Login)
+│   │   │   ├── SignUp.jsx      # Authentication (Register)
+│   │   │   ├── Customize.jsx   # Assistant Image selection
+│   │   │   └── Customize2.jsx  # Assistant Naming
+│   │   ├── App.jsx             # 🚦 Routing Logic
+│   │   ├── index.css           # Global Tailwind/CSS styles
+│   │   └── main.jsx            # React Hydration
+│   └── vite.config.js          # Vite & Tailwind build config
+└── README.md                   # 📖 Full Project Documentation
 ```
 
 ---
