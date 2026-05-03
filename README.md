@@ -10,6 +10,7 @@ A state-of-the-art, voice-activated virtual assistant platform built for perform
 
 ## 📑 Table of Contents
 - [Project Overview](#-project-overview)
+- [Folder Structure](#-folder-structure)
 - [Core Features](#-core-features)
 - [Architecture & Tech Stack](#-architecture--tech-stack)
 - [Environment Configuration](#-environment-configuration)
@@ -23,6 +24,35 @@ A state-of-the-art, voice-activated virtual assistant platform built for perform
 
 ## 🎯 Project Overview
 Virtual Assistant is not just a chatbot; it's a voice-first interface designed to bridge the gap between users and web services. By utilizing high-speed inference from Groq Cloud, the assistant processes complex natural language queries in milliseconds, making it suitable for real-time voice applications.
+
+---
+
+## 📂 Folder Structure
+
+```text
+virtual-assistant/
+├── backend/                # Express.js Server
+│   ├── config/             # DB & Cloudinary configurations
+│   ├── controllers/        # Business logic (Auth, AI Processing)
+│   ├── middlewares/        # Auth & File upload middlewares
+│   ├── models/             # Mongoose User schemas
+│   ├── routes/             # API endpoint definitions
+│   ├── public/             # Temporary local storage for uploads
+│   ├── .env                # Environment variables (Internal)
+│   ├── gemini.js           # Groq AI implementation logic
+│   └── index.js            # Entry point
+├── frontend/               # Vite + React Client
+│   ├── public/             # Static assets
+│   ├── src/
+│   │   ├── assets/         # Animations & Images (GIFs)
+│   │   ├── components/     # Reusable UI components
+│   │   ├── context/        # UserData Global State
+│   │   ├── pages/          # Application views (Home, Auth, Customization)
+│   │   ├── App.jsx         # Main routing
+│   │   └── main.jsx        # App entry point
+│   └── vite.config.js      # Vite configuration
+└── README.md               # Project documentation
+```
 
 ---
 
